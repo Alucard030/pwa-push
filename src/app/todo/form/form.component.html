@@ -1,0 +1,15 @@
+
+<div class="myForm">
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit()" >
+        <div class="row">
+            <div class="col-md-7">
+                <input type="text" class="form-control" pattern="^([A-Za-z0-9]+)$"  formControlName="task" />
+                <span *ngIf=" todoForm.get('task').touched && todoForm.get('task').hasError('required')"> this is required</span>
+                <span *ngIf="todoForm.get('task').hasError('pattern')"> Pattern Error</span>
+            </div>
+            <div class="col-md-2">
+                <button [disabled]="!todoForm.valid" type="submit" class="btn btn-primary">Add Task</button>
+            </div>
+        </div>
+    </form>
+</div>
