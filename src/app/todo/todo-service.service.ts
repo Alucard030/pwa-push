@@ -11,7 +11,7 @@ export class TodoServiceService {
    }
 
    onAdd(task){
-     this.tasks.push(task);
+     this.tasks=[...this.tasks,task]
    }
    showTasks(){
      return this.tasks;

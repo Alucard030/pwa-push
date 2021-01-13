@@ -1,6 +1,7 @@
 <div>
+<button class="btn btn-primary" (click)="clearList()">Clear All</button>
     <div class="container-fluid">
-        <ul class="list-group" *ngFor="let task of (tasks|sort)">
+        <ul class="list-group" *ngFor="let task of tasks">
             <li class="list-group-item">{{task}}</li>
           </ul>
       </div>
